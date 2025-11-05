@@ -1,4 +1,4 @@
-package com.movieIndexer.controller;
+package com.movieIndexer.Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

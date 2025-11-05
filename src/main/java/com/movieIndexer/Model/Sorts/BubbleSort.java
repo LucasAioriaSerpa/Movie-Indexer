@@ -1,5 +1,5 @@
 
-package com.movieIndexer.model.sorts;
+package com.movieIndexer.Model.Sorts;
 
 import java.util.Comparator;
 import java.util.List;

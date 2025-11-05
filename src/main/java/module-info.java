@@ -5,11 +5,11 @@ module com.movieIndexer {
     requires java.logging;
 
     exports com.movieIndexer;
-    exports com.movieIndexer.view;
-    exports com.movieIndexer.controller;
+    exports com.movieIndexer.View;
+    exports com.movieIndexer.Controller;
 
     opens com.movieIndexer              to javafx.fxml, javafx.graphics, javafx.controls;
-    opens com.movieIndexer.view         to javafx.fxml, javafx.graphics, javafx.controls;
-    opens com.movieIndexer.controller   to javafx.fxml, javafx.graphics, javafx.controls;
+    opens com.movieIndexer.View to javafx.fxml, javafx.graphics, javafx.controls;
+    opens com.movieIndexer.Controller to javafx.fxml, javafx.graphics, javafx.controls;
 
 }

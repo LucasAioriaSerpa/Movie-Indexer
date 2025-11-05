@@ -1,4 +1,4 @@
-package com.movieIndexer.view;
+package com.movieIndexer.View;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

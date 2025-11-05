@@ -59,7 +59,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.movieIndexer/com.movieIndexer.view.HelloApplicationView</mainClass>
+                            <mainClass>com.movieIndexer/com.movieIndexer.View.HelloApplicationView</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

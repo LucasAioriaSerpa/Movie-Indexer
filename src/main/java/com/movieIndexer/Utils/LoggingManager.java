@@ -1,4 +1,4 @@
-package com.movieIndexer.utils;
+package com.movieIndexer.Utils;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
