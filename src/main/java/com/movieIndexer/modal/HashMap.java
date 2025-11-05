@@ -1,4 +1,5 @@
 package com.movieIndexer.modal;
 
-public class QuickSort {
+public class HashMap {
+
 }
