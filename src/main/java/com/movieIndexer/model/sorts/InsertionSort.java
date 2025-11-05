@@ -1,4 +1,4 @@
-package com.movieIndexer.modal.sorts;
+package com.movieIndexer.model.sorts;
 
 import java.util.Comparator;
 import java.util.List;
