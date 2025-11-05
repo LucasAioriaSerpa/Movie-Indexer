@@ -2,6 +2,7 @@ module com.movieIndexer {
     requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.logging;
 
     exports com.movieIndexer;
     exports com.movieIndexer.view;
