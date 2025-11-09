@@ -3,6 +3,7 @@ module com.movieIndexer {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.logging;
+    requires atlantafx.base;
 
     exports com.movieIndexer;
     exports com.movieIndexer.View;

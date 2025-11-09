@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="960.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.movieIndexer.Controller.InserirFilmeController">
+    <stylesheets>
+        <URL value="@../../styles/styleBase.css" />
+    </stylesheets>
+   <children>
+      <VBox alignment="CENTER" layoutX="590.0" layoutY="377.0" prefHeight="206.0" prefWidth="100.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
