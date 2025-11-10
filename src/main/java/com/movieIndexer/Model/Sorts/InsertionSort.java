@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class InsertionSort {
+public class InsertionSort implements SortStrategy{
 
-    public static <K, V> void sortMapEntries(
-            List<Map.Entry<K, V>> list,
-            Comparator<Map.Entry<K, V>> comparator
+    @Override
+    public <K, V> void sortMapEntries(
+        List<Map.Entry<K, V>> list, 
+        Comparator<Map.Entry<K, V>> comparator
     ) {
         Objects.requireNonNull(list, "List cannot be null");
         Objects.requireNonNull(comparator, "Comparator cannot be null");
