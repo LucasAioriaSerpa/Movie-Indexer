@@ -15,7 +15,7 @@ import java.util.Objects;
  * 
  * @author Movie Indexer
  */
-public class QuickSort {
+public class QuickSort implements SortStrategy{
 
     /**
      * Limite de tamanho para usar Insertion Sort em vez de Quick Sort.
@@ -33,7 +33,8 @@ public class QuickSort {
      * @throws NullPointerException se list ou comparator forem null
      * @throws IllegalArgumentException se a lista contiver elementos null
      */
-    public static <K, V> void sortMapEntries(
+    @Override
+    public <K, V> void sortMapEntries(
             List<Map.Entry<K, V>> list,
             Comparator<Map.Entry<K, V>> comparator
     ) {
