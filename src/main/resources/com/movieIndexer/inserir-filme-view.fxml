@@ -35,12 +35,12 @@
 
     <Label fx:id="lblFilmeId" managed="false" visible="false" />
 
-    <VBox alignment="BASELINE_LEFT" maxWidth="528.0" spacing="5">
+    <VBox alignment="TOP_LEFT" maxWidth="528.0" spacing="5">
         <Label styleClass="label-form" text="Título" />
         <TextField fx:id="fieldTitulo" maxWidth="Infinity" prefHeight="31.0" />
     </VBox>
     <Separator maxWidth="528.0" prefWidth="200.0" />
-    <VBox alignment="BASELINE_LEFT" maxWidth="528.0" prefHeight="180.0" spacing="5">
+    <VBox alignment="TOP_LEFT" maxWidth="528.0" spacing="5">
         <Label styleClass="label-form" text="Sinopse" />
         <TextArea fx:id="areaSinopse" maxWidth="Infinity" prefHeight="140.0" wrapText="true" />
     </VBox>
