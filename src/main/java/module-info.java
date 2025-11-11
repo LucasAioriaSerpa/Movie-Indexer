@@ -12,6 +12,7 @@ module com.movieIndexer {
 
     opens com.movieIndexer              to com.google.gson, javafx.fxml, javafx.graphics, javafx.controls;
     opens com.movieIndexer.View         to com.google.gson, javafx.fxml, javafx.graphics, javafx.controls;
+    opens com.movieIndexer.Model        to com.google.gson, javafx.fxml, javafx.graphics, javafx.controls, javafx.base;
     opens com.movieIndexer.Controller   to com.google.gson, javafx.fxml, javafx.graphics, javafx.controls;
 
 }

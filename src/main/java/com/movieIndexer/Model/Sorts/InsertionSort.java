@@ -9,7 +9,7 @@ public class InsertionSort implements SortStrategy{
 
     @Override
     public <K, V> void sortMapEntries(
-        List<Map.Entry<K, V>> list, 
+        List<Map.Entry<K, V>> list,
         Comparator<Map.Entry<K, V>> comparator
     ) {
         Objects.requireNonNull(list, "List cannot be null");

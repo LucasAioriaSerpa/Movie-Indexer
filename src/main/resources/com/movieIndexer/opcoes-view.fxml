@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="960.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.movieIndexer.Controller.OpcoesController">
+    <stylesheets>
+        <URL value="@../../styles/styleBase.css" />
+    </stylesheets>
+
+    <VBox alignment="TOP_CENTER" prefHeight="960.0" prefWidth="1280.0" spacing="20.0">
+        <padding>
+            <Insets top="80.0" />
+        </padding>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Opções">
+            <font>
+                <Font name="Harlow Solid Italic" size="70.0" />
+            </font>
+        </Text>
+        <VBox alignment="CENTER_LEFT" maxWidth="500.0" spacing="10.0">
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+            <Label text="Configurações de Ordenação de Filtros" style="-fx-font-size: 1.5em;" />
+
+            <Label text="Algoritmo de Ordenação (Strategy):" style="-fx-font-size: 1.1em; -fx-padding-top: 10;">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Define *como* a lista é ordenada (performance vs. simplicidade)." wrapText="true" />
+            <ComboBox fx:id="comboStrategy" maxWidth="Infinity" promptText="Selecione o algoritmo" />
+
+            <Label text="Critério de Ordenação (Comparator):" style="-fx-font-size: 1.1em;">
+                <VBox.margin>
+                    <Insets top="20.0" />
+                </VBox.margin>
+            </Label>
+            <Label text="Define *pelo que* a lista é ordenada (título, ano, etc.)." wrapText="true" />
+            <ComboBox fx:id="comboComparator" maxWidth="Infinity" promptText="Selecione o critério" />
+
+            <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#handleSave" prefHeight="40.0" prefWidth="200.0" text="Salvar Preferências">
+                <VBox.margin>
+                    <Insets top="30.0" />
+                </VBox.margin>
+            </Button>
+
+            <Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#handleVoltar" text="&lt; Voltar" />
+
+            <Label fx:id="lblStatus" styleClass="label-success" textFill="#4CAF50" visible="false">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </VBox>
+</AnchorPane>

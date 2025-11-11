@@ -1,21 +1,26 @@
 package com.movieIndexer.Model;
 
-import java.time.Duration;
-
 public class Filme {
+    private int id;
     private String titulo;
     private String sinopse;
     private String diretor;
     private int anoLancamento;
-    private Duration duracao;
+    private int duracaoEmMinutos;
 
-    public Filme(String titulo, String sinopse, String diretor, int anoLancamento, Duration duracao) {
+    public Filme() {}
+
+    public Filme(int id, String titulo, String sinopse, String diretor, int anoLancamento, int duracaoEmMinutos) {
+        this.id = id;
         this.titulo = titulo;
         this.sinopse = sinopse;
         this.diretor = diretor;
         this.anoLancamento = anoLancamento;
-        this.duracao = duracao;
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
@@ -29,7 +34,9 @@ public class Filme {
     public int getAnoLancamento() { return anoLancamento; }
     public void setAnoLancamento(int anoLancamento) { this.anoLancamento = anoLancamento; }
 
-    public Duration getDuracao() { return duracao; }
-    public void setDuracao(Duration duracao) { this.duracao = duracao; }
+    public int getDuracaoEmMinutos() { return duracaoEmMinutos; }
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) { this.duracaoEmMinutos = duracaoEmMinutos; }
 
+    @Override
+    public String toString() { return titulo + " (" + anoLancamento + ") [ID: " + id + "]"; }
 }

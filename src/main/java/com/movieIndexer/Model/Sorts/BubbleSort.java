@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class BubbleSort implements SortStrategy{
-    
+
     @Override
     public <K, V> void sortMapEntries(
-        List<Map.Entry<K, V>> list, 
+        List<Map.Entry<K, V>> list,
         Comparator<Map.Entry<K, V>> comparator
     ) {
         Objects.requireNonNull(list, "List cannot be null");

@@ -1,8 +1,12 @@
 package com.movieIndexer.Model;
 
-import com.movieIndexer.Utils.LoggingManager;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
-import java.util.*;
+import com.movieIndexer.Utils.LoggingManager;
 
 public class HashMap {
 
@@ -14,7 +18,6 @@ public class HashMap {
         final int key;
         Filme value;
         Node next;
-
         Node(int key, Filme value, Node next) {
             this.key = key;
             this.value = value;
@@ -40,9 +43,9 @@ public class HashMap {
         this.size = 0;
         LOG.logInfo("100", "HashMap inicializado com capacidade " + this.capacity + ".");
     }
-    
+
     //? ===================================== UTILIDADES ==========================================
-    
+
     private int indexFor(int key) {
         return Math.floorMod(Integer.hashCode(key), capacity);
     }
@@ -76,7 +79,6 @@ public class HashMap {
 
     //? ================================= PRINCIPAIS OPERACOES =================================
 
-    /** Insere ou atualiza o filme com a chave dada. */
     public Filme put(int key, Filme value) {
         return putInternal(key, value, true);
     }
@@ -172,6 +174,19 @@ public class HashMap {
         LOG.logInfo("100", "Exportando " + size + " entradas do mapa.");
         exportBucketRecursive(0, out);
         return out;
+    }
+
+    public List<Filme> getAllFilmes() {
+        List<Filme> filmes = new ArrayList<>(size);
+        for (Node bucketHead : buckets) {
+            Node current = bucketHead;
+            while (current != null) {
+                filmes.add(current.value);
+                current = current.next;
+            }
+        }
+        LOG.logInfo("100", "Retornando " + filmes.size() + " objetos Filme do mapa.");
+        return filmes;
     }
 
     private void exportBucketRecursive(int bucketIndex, List<Map.Entry<Integer, Filme>> out) {

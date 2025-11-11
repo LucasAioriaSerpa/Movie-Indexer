@@ -19,7 +19,7 @@ public class FilterFilmes {
     }
 
     public static Comparator<Map.Entry<Integer, Filme>> porDuracao() {
-        return Comparator.comparing(entry -> entry.getValue().getDuracao());
+        return Comparator.comparing(entry -> entry.getValue().getDuracaoEmMinutos());
     }
 
 }
