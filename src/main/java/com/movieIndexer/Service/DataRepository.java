@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class DataRepository {
 
     private static final LoggingManager LOG = new LoggingManager();
-    private static final int BULK_TEMPLATE_SIZE = 700;
+    private static final int BULK_TEMPLATE_SIZE = 700; //! 3000 MAX SIZE
 
     private static DataRepository instance;
 

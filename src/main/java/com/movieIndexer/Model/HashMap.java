@@ -191,7 +191,6 @@ public class HashMap {
 
     private void exportBucketRecursive(int bucketIndex, List<Map.Entry<Integer, Filme>> out) {
         if (bucketIndex >= capacity) return;
-
         Node n = buckets[bucketIndex];
         while (n != null) {
             out.add(new AbstractMap.SimpleEntry<>(n.key, n.value));

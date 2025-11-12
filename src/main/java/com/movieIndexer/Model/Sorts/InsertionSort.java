@@ -14,12 +14,21 @@ public class InsertionSort implements SortStrategy{
     ) {
         Objects.requireNonNull(list, "List cannot be null");
         Objects.requireNonNull(comparator, "Comparator cannot be null");
+        insertionSort(list, comparator);
+    }
+
+    public <K, V> void insertionSortDummyWay(
+        List<Map.Entry<K, V>> list,
+        Comparator<Map.Entry<K, V>> comparator
+    ) {
+        Objects.requireNonNull(list, "List cannot be null");
+        Objects.requireNonNull(comparator, "Comparator cannot be null");
         if (list.size() <= 1) { return; }
         int n = list.size();
         for (int i = 1; i < n; i++) {
             Map.Entry<K, V> current = Objects.requireNonNull(
-                list.get(i),
-                "List cannot contain null entries..."
+                    list.get(i),
+                    "List cannot contain null entries..."
             ); int j = i - 1;
             while (j >= 0) {
                 Map.Entry<K, V> previous = list.get(j);
@@ -29,7 +38,7 @@ public class InsertionSort implements SortStrategy{
         }
     }
 
-    public static <K, V> void sortMapEntriesRecursive(
+    public <K, V> void insertionSort(
             List<Map.Entry<K, V>> list,
             Comparator<Map.Entry<K, V>> comparator
     ) {
@@ -39,7 +48,7 @@ public class InsertionSort implements SortStrategy{
         sortRecursive(list, list.size() - 1, comparator);
     }
 
-    private static <K, V> void sortRecursive(
+    private <K, V> void sortRecursive(
             List<Map.Entry<K, V>> list,
             int n,
             Comparator<Map.Entry<K, V>> comparator
@@ -53,7 +62,7 @@ public class InsertionSort implements SortStrategy{
         insertRecursive(list, n, current, comparator);
     }
 
-    private static <K, V> void insertRecursive(
+    private <K, V> void insertRecursive(
             List<Map.Entry<K, V>> list,
             int position,
             Map.Entry<K, V> element,
