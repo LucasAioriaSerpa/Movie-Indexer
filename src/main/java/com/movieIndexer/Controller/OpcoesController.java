@@ -7,8 +7,10 @@ import com.movieIndexer.View.SceneManager;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +21,8 @@ public class OpcoesController {
     private ComboBox<String> comboStrategy;
     @FXML
     private ComboBox<String> comboComparator;
+    @FXML
+    private CheckBox chkBulkTemplate;
     @FXML
     private Button btnSalvar;
     @FXML
@@ -46,6 +50,9 @@ public class OpcoesController {
         String savedComparatorKey = SortProvider.getKeyFromValue( SortProvider.COMPARATOR_OPTIONS, config.getSortingComparator() );
         comboStrategy.setValue(savedStrategyKey);
         comboComparator.setValue(savedComparatorKey);
+        if (chkBulkTemplate != null) {
+            chkBulkTemplate.setSelected(config.isBulkInsertTemplateEnabled());
+        }
     }
 
     @FXML
@@ -56,16 +63,24 @@ public class OpcoesController {
         try {
             String selectedStrategyKey = comboStrategy.getValue();
             String selectedComparatorKey = comboComparator.getValue();
-            String strategyToSave = SortProvider.STRATEGY_OPTIONS.get(selectedStrategyKey);
-            String comparatorToSave = SortProvider.COMPARATOR_OPTIONS.get(selectedComparatorKey);
+            String strategyToSave = selectedStrategyKey != null
+                    ? SortProvider.STRATEGY_OPTIONS.get(selectedStrategyKey)
+                    : config.getSortingStrategy();
+            String comparatorToSave = selectedComparatorKey != null
+                    ? SortProvider.COMPARATOR_OPTIONS.get(selectedComparatorKey)
+                    : config.getSortingComparator();
             config.setSortingStrategy(strategyToSave);
             config.setSortingComparator(comparatorToSave);
+            if (chkBulkTemplate != null) {
+                config.setBulkInsertTemplateEnabled(chkBulkTemplate.isSelected());
+            }
             configService.saveConfig(config);
             lblStatus.setText("Preferências salvas com sucesso!");
+            lblStatus.setTextFill(Color.GREEN);
             lblStatus.setVisible(true);
         } catch (Exception e) {
             lblStatus.setText("Erro ao salvar: " + e.getMessage());
-            lblStatus.setTextFill(javafx.scene.paint.Color.RED);
+            lblStatus.setTextFill(Color.RED);
             lblStatus.setVisible(true);
             e.printStackTrace();
         }
