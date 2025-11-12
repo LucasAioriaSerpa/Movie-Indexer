@@ -79,6 +79,7 @@ public class InserirFilmeController {
                 successMessage = "Filme (ID: " + id + ") salvo com sucesso!";
             }
 
+            filme.setId(id);
             dataRepository.getFilmesMap().put(id, filme);
             dataRepository.saveFilmes();
             showStatus(successMessage, true);
